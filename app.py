@@ -42,13 +42,21 @@ async def category_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
 
     if query.data == "cat_bra":
-        keyboard = [
-            [InlineKeyboardButton("Бра Secure Support", callback_data="bra_secure")],
-            [InlineKeyboardButton("Бра Active Move", callback_data="bra_active")]
-        ]
-        await query.edit_message_text("Выбери модель бра:", reply_markup=InlineKeyboardMarkup(keyboard))
-
-    # Можно будет добавить аналогично для других категорий
+        await query.message.reply_photo(
+            photo=open("images/AgACAgIAAxkBAAMSaF1QI9J6v6jUdkIm11yd5z-TfT4AAu_uMRuTdehK-NxYzJdGMOUBAAMCAAN4AAM2BA.jpg", "rb"),
+            caption="Бра Secure Support",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Выбрать", callback_data="bra_secure")]
+            ])
+        )
+        await query.message.reply_photo(
+            photo=open("images/AgACAgIAAxkBAAMZaF1QkZBN1U7qGFCId_DcwBZ88XoAAlr0MRu9IOlKJlKv6ea526MBAAMCAAN5AAM2BA.jpg", "rb"),
+            caption="Бра Active Move",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Выбрать", callback_data="bra_active")]
+            ])
+        )
+# Можно будет добавить аналогично для других категорий
 
 
 # Опции для моделей бра
