@@ -106,7 +106,7 @@ async def color_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_photo(photo="AgACAgIAAxkBAAMXaF1QcIuVJTKkyKQjXGOxAAFBv-mJAALz7jEbk3XoSg88Ty4NENp5AQADAgADeAADNgQ")
 
     # Для модели bra_active
-    elif color == "color_active_white":
+    if color == "color_active_white":
         photos = [
         InputMediaPhoto(media="AgACAgIAAxkBAAMbaF1SgjEkYFRhRaKjPTsd74_KZRkAAmj0MRu9IOlKgpnzRQ8-LpMBAAMCAAN5AAM2BA"),
         InputMediaPhoto(media="fileAgACAgIAAxkBAAMdaF1SjxSotsnyF7W7sKRHdWLra4cAAmr0MRu9IOlKTo8e3zTlKocBAAMCAAN5AAM2BA_id_2"),
