@@ -1,0 +1,1 @@
+# Jarqyn-Wear-telegram-shop-of-sportswear
