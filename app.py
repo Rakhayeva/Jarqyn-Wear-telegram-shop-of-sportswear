@@ -106,33 +106,33 @@ async def color_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_photo(photo="AgACAgIAAxkBAAMXaF1QcIuVJTKkyKQjXGOxAAFBv-mJAALz7jEbk3XoSg88Ty4NENp5AQADAgADeAADNgQ")
 
     # Для модели bra_active
-    if color == "color_active_white":
+    elif color == "color_active_white":
         photos = [
-        InputMediaPhoto(media="AgACAgIAAxkBAAMbaF1SgjEkYFRhRaKjPTsd74_KZRkAAmj0MRu9IOlKgpnzRQ8-LpMBAAMCAAN5AAM2BA"),
-        InputMediaPhoto(media="fileAgACAgIAAxkBAAMdaF1SjxSotsnyF7W7sKRHdWLra4cAAmr0MRu9IOlKTo8e3zTlKocBAAMCAAN5AAM2BA_id_2"),
+            InputMediaPhoto(media="AgACAgIAAxkBAAMbaF1SgjEkYFRhRaKjPTsd74_KZRkAAmj0MRu9IOlKgpnzRQ8-LpMBAAMCAAN5AAM2BA"),
+            InputMediaPhoto(media="fileAgACAgIAAxkBAAMdaF1SjxSotsnyF7W7sKRHdWLra4cAAmr0MRu9IOlKTo8e3zTlKocBAAMCAAN5AAM2BA_id_2"),
     ]
-    await query.message.reply_media_group(photos)
-    
+        await query.message.reply_media_group(photos)
+
     elif color == "color_active_blue":
         photos = [
-        InputMediaPhoto(media="AgACAgIAAxkBAAMZaF1QkZBN1U7qGFCId_DcwBZ88XoAAlr0MRu9IOlKJlKv6ea526MBAAMCAAN5AAM2BA"),
-        InputMediaPhoto(media="AgACAgIAAxkBAAMfaF1TFtF5PkVRfrgtkMfqLOh8kh8AAm30MRu9IOlK8PNQrrTOZyUBAAMCAAN5AAM2BA"),
+            InputMediaPhoto(media="AgACAgIAAxkBAAMZaF1QkZBN1U7qGFCId_DcwBZ88XoAAlr0MRu9IOlKJlKv6ea526MBAAMCAAN5AAM2BA"),
+            InputMediaPhoto(media="AgACAgIAAxkBAAMfaF1TFtF5PkVRfrgtkMfqLOh8kh8AAm30MRu9IOlK8PNQrrTOZyUBAAMCAAN5AAM2BA"),
     ]
-    await query.message.reply_media_group(photos)
+        await query.message.reply_media_group(photos)
 
     elif color == "color_active_mint":
         photos = [
-        InputMediaPhoto(media="AgACAgIAAxkBAAMhaF1TckEINY4B6LOS_Eg2UeYMfzkAAm_0MRu9IOlKLUVxz6Z4RM0BAAMCAAN5AAM2BA"),
-        InputMediaPhoto(media="AgACAgIAAxkBAAMjaF1Tks1dTxCPELimRvpgLd5BgcUAArj9MRsdF-hKq8Wb0ks8a1UBAAMCAAN5AAM2BA"),
+            InputMediaPhoto(media="AgACAgIAAxkBAAMhaF1TckEINY4B6LOS_Eg2UeYMfzkAAm_0MRu9IOlKLUVxz6Z4RM0BAAMCAAN5AAM2BA"),
+            InputMediaPhoto(media="AgACAgIAAxkBAAMjaF1Tks1dTxCPELimRvpgLd5BgcUAArj9MRsdF-hKq8Wb0ks8a1UBAAMCAAN5AAM2BA"),
     ]
-    await query.message.reply_media_group(photos)
+        await query.message.reply_media_group(photos)
 
     elif color == "color_active_black":
         photos = [
-        InputMediaPhoto(media="AgACAgIAAxkBAAMlaF1T0dqffe_UjoLWY6La1MZYbSUAAnT0MRu9IOlKtBcsjaj4FboBAAMCAAN5AAM2BA"),
-        InputMediaPhoto(media="AgACAgIAAxkBAAMnaF1T2A9YJk3hTqjZqHCCpGQvwzYAAiHvMRuTdehKml9did1WGr0BAAMCAAN5AAM2BA"),
+            InputMediaPhoto(media="AgACAgIAAxkBAAMlaF1T0dqffe_UjoLWY6La1MZYbSUAAnT0MRu9IOlKtBcsjaj4FboBAAMCAAN5AAM2BA"),
+            InputMediaPhoto(media="AgACAgIAAxkBAAMnaF1T2A9YJk3hTqjZqHCCpGQvwzYAAiHvMRuTdehKml9did1WGr0BAAMCAAN5AAM2BA"),
     ]
-    await query.message.reply_media_group(photos)
+        await query.message.reply_media_group(photos)
 
 
 # Контакты
