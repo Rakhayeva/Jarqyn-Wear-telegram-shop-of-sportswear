@@ -64,7 +64,7 @@ async def bra_model_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if model == "bra_secure":
         # Показываем фото модели
-        await query.message.reply_photo(photo=open("images/bra_secure_support.jpg", "rb"))
+        await query.message.reply_photo(photo=open("images/AgACAgIAAxkBAAMSaF1QI9J6v6jUdkIm11yd5z-TfT4AAu_uMRuTdehK-NxYzJdGMOUBAAMCAAN4AAM2BA.jpg", "rb"))
         color_keyboard = [
             [InlineKeyboardButton("Белый", callback_data="color_secure_white")],
             [InlineKeyboardButton("Голубой", callback_data="color_secure_blue")],
@@ -74,7 +74,7 @@ async def bra_model_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("S", callback_data="size_secure_S"), InlineKeyboardButton("M", callback_data="size_secure_M"), InlineKeyboardButton("L", callback_data="size_secure_L")]
         ]
     elif model == "bra_active":
-        await query.message.reply_photo(photo=open("images/bra_active_move.jpg", "rb"))
+        await query.message.reply_photo(photo=open("images/AgACAgIAAxkBAAMZaF1QkZBN1U7qGFCId_DcwBZ88XoAAlr0MRu9IOlKJlKv6ea526MBAAMCAAN5AAM2BA.jpg", "rb"))
         color_keyboard = [
             [InlineKeyboardButton("Белый", callback_data="color_active_white")],
             [InlineKeyboardButton("Голубой", callback_data="color_active_blue")],
@@ -90,6 +90,49 @@ async def bra_model_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.message.reply_text("Выберите размер:", reply_markup=InlineKeyboardMarkup(size_keyboard))
     await query.message.reply_text("Дополнительно:", reply_markup=InlineKeyboardMarkup([[chart_button]]))
 
+# Обработка выбора цвета для моделей бра
+async def color_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    color = query.data
+
+    # Для модели bra_secure
+    if color == "color_secure_white":
+        await query.message.reply_photo(photo="AgACAgIAAxkBAAMSaF1QI9J6v6jUdkIm11yd5z-TfT4AAu_uMRuTdehK-NxYzJdGMOUBAAMCAAN4AAM2BA")
+    elif color == "color_secure_blue":
+        await query.message.reply_photo(photo="AgACAgIAAxkBAAMVaF1QV5C8Xlzqweezwtf2OCkMPSgAAvLuMRuTdehKSgviwXX4618BAAMCAAN4AAM2BA")
+    elif color == "color_secure_black":
+        await query.message.reply_photo(photo="AgACAgIAAxkBAAMXaF1QcIuVJTKkyKQjXGOxAAFBv-mJAALz7jEbk3XoSg88Ty4NENp5AQADAgADeAADNgQ")
+
+    # Для модели bra_active
+    elif color == "color_active_white":
+    photos = [
+        InputMediaPhoto(media="AgACAgIAAxkBAAMbaF1SgjEkYFRhRaKjPTsd74_KZRkAAmj0MRu9IOlKgpnzRQ8-LpMBAAMCAAN5AAM2BA"),
+        InputMediaPhoto(media="fileAgACAgIAAxkBAAMdaF1SjxSotsnyF7W7sKRHdWLra4cAAmr0MRu9IOlKTo8e3zTlKocBAAMCAAN5AAM2BA_id_2"),
+    ]
+    await query.message.reply_media_group(photos)
+    
+    elif color == "color_active_blue":
+        photos = [
+        InputMediaPhoto(media="AgACAgIAAxkBAAMZaF1QkZBN1U7qGFCId_DcwBZ88XoAAlr0MRu9IOlKJlKv6ea526MBAAMCAAN5AAM2BA"),
+        InputMediaPhoto(media="AgACAgIAAxkBAAMfaF1TFtF5PkVRfrgtkMfqLOh8kh8AAm30MRu9IOlK8PNQrrTOZyUBAAMCAAN5AAM2BA"),
+    ]
+    await query.message.reply_media_group(photos)
+
+    elif color == "color_active_mint":
+        photos = [
+        InputMediaPhoto(media="AgACAgIAAxkBAAMhaF1TckEINY4B6LOS_Eg2UeYMfzkAAm_0MRu9IOlKLUVxz6Z4RM0BAAMCAAN5AAM2BA"),
+        InputMediaPhoto(media="AgACAgIAAxkBAAMjaF1Tks1dTxCPELimRvpgLd5BgcUAArj9MRsdF-hKq8Wb0ks8a1UBAAMCAAN5AAM2BA"),
+    ]
+    await query.message.reply_media_group(photos)
+
+    elif color == "color_active_black":
+        photos = [
+        InputMediaPhoto(media="AgACAgIAAxkBAAMlaF1T0dqffe_UjoLWY6La1MZYbSUAAnT0MRu9IOlKtBcsjaj4FboBAAMCAAN5AAM2BA"),
+        InputMediaPhoto(media="AgACAgIAAxkBAAMnaF1T2A9YJk3hTqjZqHCCpGQvwzYAAiHvMRuTdehKml9did1WGr0BAAMCAAN5AAM2BA"),
+    ]
+    await query.message.reply_media_group(photos)
 
 
 # Контакты
@@ -100,11 +143,6 @@ async def contacts(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def about(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Стильная и надёжная эстетика спорта по честной цене. Для девушек и женщин, которые заботятся о себе и выбирают удобство.")
 
-# Логгер для получения file_id фотографий
-async def photo_logger(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if update.message.photo:
-        file_id = update.message.photo[-1].file_id
-        await update.message.reply_text(f"🆔 file_id: {file_id}")
 
 def main():
     app = Application.builder().token(BOT_TOKEN).build()
@@ -113,10 +151,10 @@ def main():
     app.add_handler(MessageHandler(filters.TEXT & filters.Regex("Каталог"), show_catalog))
     app.add_handler(MessageHandler(filters.TEXT & filters.Regex("Контакты"), contacts))
     app.add_handler(MessageHandler(filters.TEXT & filters.Regex("О нас"), about))
-    app.add_handler(MessageHandler(filters.PHOTO, photo_logger))
-
 
     app.add_handler(CallbackQueryHandler(category_handler, pattern="^cat_.*$"))
+    app.add_handler(CallbackQueryHandler(bra_model_handler, pattern="^bra_.*$"))
+    app.add_handler(CallbackQueryHandler(color_handler, pattern="^color_.*$")) 
 
     app.run_polling()
 
