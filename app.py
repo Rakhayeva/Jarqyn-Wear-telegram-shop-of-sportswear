@@ -1,7 +1,12 @@
 import os
-from telegram import Update
-from telegram import ReplyKeyboardMarkup
-from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters
+from telegram import (
+    Update, InlineKeyboardButton, InlineKeyboardMarkup,
+    ReplyKeyboardMarkup, InputMediaPhoto
+)
+from telegram.ext import (
+    Application, CommandHandler, CallbackQueryHandler,
+    MessageHandler, ContextTypes, filters
+)
 
 # Получаем токен из переменной окружения (безопасно)
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
