@@ -42,6 +42,7 @@ async def category_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
 
     if query.data == "cat_bra":
+        # Отправляем первое фото и кнопку
         await query.message.reply_photo(
             photo=open("images/AgACAgIAAxkBAAMSaF1QI9J6v6jUdkIm11yd5z-TfT4AAu_uMRuTdehK-NxYzJdGMOUBAAMCAAN4AAM2BA.jpg", "rb"),
             caption="Бра Secure Support",
@@ -49,6 +50,8 @@ async def category_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("Выбрать", callback_data="bra_secure")]
             ])
         )
+
+        # Отправляем второе фото и кнопку
         await query.message.reply_photo(
             photo=open("images/AgACAgIAAxkBAAMZaF1QkZBN1U7qGFCId_DcwBZ88XoAAlr0MRu9IOlKJlKv6ea526MBAAMCAAN5AAM2BA.jpg", "rb"),
             caption="Бра Active Move",
@@ -56,6 +59,7 @@ async def category_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("Выбрать", callback_data="bra_active")]
             ])
         )
+
 # Можно будет добавить аналогично для других категорий
 
 
